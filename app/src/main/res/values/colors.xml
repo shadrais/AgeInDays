@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFA938</color>
+    <color name="colorPrimaryDark">#FFA938</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="textcolor">#844046</color>
+    <color name="backgroundcolor">#FEF1E0</color>
+    <color name="agetextbgcolor">#C846DCE0</color>
+    <color name="ageTextColor">#FFFFFF</color>
+    <color name="buttonBgColor">#FFFFFF</color>
+    <color name="lightGreyText">#B7B7B7</color>
+
+</resources>
