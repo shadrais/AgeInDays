@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val month = myCalendar.get(Calendar.MONTH)
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
 
-        DatePickerDialog(this,DatePickerDialog.OnDateSetListener{view,selectedYear,selectedMonth,selectedDayOfMonth -> Toast.makeText(this,"The chosen year is $selectedYear , month is $selectedMonth and day is $selectedDayOfMonth"  , Toast .LENGTH_LONG).show()
+       val dpd =  DatePickerDialog(this,DatePickerDialog.OnDateSetListener{view,selectedYear,selectedMonth,selectedDayOfMonth -> Toast.makeText(this,"The chosen year is $selectedYear , month is ${selectedMonth+1} and day is $selectedDayOfMonth"  , Toast .LENGTH_LONG).show()
             val selectedDate = "$selectedDayOfMonth/${selectedMonth+1}/$selectedYear"
 
             tvSelectedDate.setText(selectedDate)
@@ -37,16 +37,23 @@ class MainActivity : AppCompatActivity() {
 
             val currentDateInMinute = currentDate!!.time / 60000
 
-            val differenceInMinute = currentDateInMinute - selectedDateInMinutes
+           val selectedDateInDays = selectedDateInMinutes/1440
 
-            tvSelectedDateInMinutes.setText(differenceInMinute.toString())
+           val currentDateInDays = currentDateInMinute/1440
+
+            val differenceInDays = currentDateInDays - selectedDateInDays
+
+            tvSelectedDateInMinutes.setText(differenceInDays.toString())
 
             
         }
             ,
             year,
             month,
-            day).show()
+            day)
+
+        dpd.datePicker.setMaxDate(Date().time - 84600000)
+        dpd.show()
 
     }
 }
